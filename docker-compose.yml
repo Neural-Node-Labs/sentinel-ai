@@ -1,0 +1,26 @@
+# ============================================================================
+# FILE: docker-compose.yml
+# ============================================================================
+
+version: '3.8'
+
+services:
+  sentinel-ai:
+    build: .
+    container_name: sentinel-ai
+    env_file:
+      - .env
+    volumes:
+      - ./chroma_db:/app/chroma_db
+      - ./logs:/app/logs
+      - /var/log:/var/log:ro
+    restart: unless-stopped
+    networks:
+      - sentinel-network
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+
+networks:
+  sentinel-network:
+    driver: bridge

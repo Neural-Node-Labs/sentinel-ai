@@ -1,0 +1,10 @@
+/.venv/
+/.env
+/_sentinel_ai_system.md
+/_prompt.md
+/misc.xml
+/modules.xml
+/profiles_settings.xml
+/Project_Default.xml
+/sentiel-ai.iml
+/vcs.xml
